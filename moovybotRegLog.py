@@ -1,6 +1,6 @@
-from flask import Flask
+from flask import Flask, request
 from telegram import Bot
-from telegram.ext import Updater, CommandHandler
+from telegram.ext import Updater
 import threading
 import os
 
@@ -22,7 +22,11 @@ def init_counter():
 
 counter = init_counter()
 
-# Конфигурация
+# Конфигурация SSL
+SSL_CERT = '/etc/letsencrypt/live/ваш-домен/fullchain.pem'
+SSL_KEY = '/etc/letsencrypt/live/ваш-домен/privkey.pem'
+
+# Конфигурация бота
 BOT_TOKEN = '8187209628:AAGmp2jeLZAs-CDxH3Rasui3M1wMwDdCMP8'
 CHANNEL_ID = '1002682218447'  # Например: @my_channel или ID канала
 WEBHOOK_URL = 'https://vvsavchenkoip.ru/count'
@@ -46,8 +50,9 @@ def handle_get():
     try:
         bot.send_message(
             chat_id=CHANNEL_ID,
-            text=f'🚀 Новый запрос! Всего: {counter}\n'
-                 f'Последний запрос от: {request.remote_addr}'
+            text=f'🔐 HTTPS запрос! Всего: {counter}\n'
+                 f'IP: {request.remote_addr}\n'
+                 f'User-Agent: {request.headers.get("User-Agent")}'
         )
     except Exception as e:
         print(f"Telegram error: {e}")
@@ -60,5 +65,11 @@ def run_bot():
     updater.idle()
 
 if __name__ == '__main__':
+    # Запуск с SSL
     threading.Thread(target=run_bot, daemon=True).start()
-    app.run(host='0.0.0.0', port=5000, use_reloader=False)
+    app.run(
+        host='0.0.0.0',
+        port=443,
+        ssl_context=(SSL_CERT, SSL_KEY),
+        use_reloader=False
+    )
