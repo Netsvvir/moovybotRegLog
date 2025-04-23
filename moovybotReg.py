@@ -7,8 +7,9 @@ import os
 app = Flask(__name__)
 
 # Конфигурация
-BOT_TOKEN = 'ВАШ_ТОКЕН_БОТА'
-CHANNEL_ID = '@ВАШ_КАНАЛ'  # Или числовой ID канала
+# Конфигурация бота
+BOT_TOKEN = '8187209628:AAGmp2jeLZAs-CDxH3Rasui3M1wMwDdCMP8'
+CHANNEL_ID = '1002682218447'  # Например: @my_channel или ID канала
 COUNTER_FILE = 'counter.json'
 
 # Инициализация бота
