@@ -1,0 +1,15 @@
+[Unit]
+Description=Counter Bot Service
+After=network.target
+
+[Service]
+User=ubuntu
+Group=ubuntu
+WorkingDirectory=/home/ubuntu/counter-bot
+Environment="PATH=/home/ubuntu/counter-bot/venv/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+ExecStart=/home/ubuntu/counter-bot/venv/bin/uvicorn main:app --host 0.0.0.0 --port 8000
+Restart=on-failure
+RestartSec=10s
+
+[Install]
+WantedBy=multi-user.target
