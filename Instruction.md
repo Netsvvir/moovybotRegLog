@@ -28,7 +28,7 @@ python3 -m pip install fastapi uvicorn python-telegram-bot aiofiles pydantic pyd
 
 или 
 
-pip install fastapi uvicorn python-telegram-bot aiofiles pydantic 
+pip install fastapi uvicorn python-telegram-bot aiofiles pydantic pydantic-settings
 ```
 
 # 5. Переменные окружения
