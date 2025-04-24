@@ -2,12 +2,12 @@
 Данный код представляет собой простую версию TG бота для отправки в канал уведомлений о переходе на некоторую страницу. Мы использовали данного ботя для того, чтобы отслеживать регистрации юзеров в нашей игре в режиме реального времени. 
 
 # Файлы
-В файле Instruction представлена непосредственно инструкция по развёртыванию бота.
-Counter-bot -- файл конфигурации nginx
-counter-bot.service -- файл сервиса systemd
+1. В файле Instruction представлена непосредственно инструкция по развёртыванию бота.
+2. Counter-bot -- файл конфигурации nginx
+3. counter-bot.service -- файл сервиса systemd
 
 # Тест с разными именами и синтаксис обращения
-curl "http://localhost:8000/count?username=Тестовый%20Юзер"
-curl "http://localhost:8000/count?username=Alice%20%26%20Bob"
-curl "http://localhost:8000/count?username=%F0%9F%91%BE%20Emoji%20User"
-curl "http://localhost:8000/status"
+- curl "http://localhost:8000/count?username=Тестовый%20Юзер"
+- curl "http://localhost:8000/count?username=Alice%20%26%20Bob"
+- curl "http://localhost:8000/count?username=%F0%9F%91%BE%20Emoji%20User"
+- curl "http://localhost:8000/status"
