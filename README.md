@@ -7,7 +7,9 @@
 3. counter-bot.service -- файл сервиса systemd
 
 # Тест с разными именами и синтаксис обращения
-- curl "http://localhost:8000/count?username=Тестовый%20Юзер"
-- curl "http://localhost:8000/count?username=Alice%20%26%20Bob"
-- curl "http://localhost:8000/count?username=%F0%9F%91%BE%20Emoji%20User"
-- curl "http://localhost:8000/status"
+```bash
+curl "http://localhost:8000/count?username=Тестовый%20Юзер"
+curl "http://localhost:8000/count?username=Alice%20%26%20Bob"
+curl "http://localhost:8000/count?username=%F0%9F%91%BE%20Emoji%20User"
+curl "http://localhost:8000/status"
+```
