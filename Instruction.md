@@ -153,6 +153,7 @@ curl "http://localhost:8000/count?username=%F0%9F%91%BE%20Emoji%20User"
 #Проверка прав доступа к файлам
 sudo chown -R ubuntu:ubuntu /home/ubuntu/counter-bot
 sudo chmod 600 /home/ubuntu/counter-bot/.env
+sudo chmod 755 /home/ubuntu/counter-bot
 
 #Проверка пакетов в виртуальном окружении
 pip list
