@@ -24,11 +24,11 @@ source venv/bin/activate
 # 4. Устанавливаем необходимые пакеты в виртуальном окружении
 
 ```bash
-python3 -m pip install fastapi uvicorn python-telegram-bot aiofiles pydantic pydantic-settings
+python3 -m pip install fastapi uvicorn python-telegram-bot aiofiles pydantic pydantic-settings matplotlib
 
 или 
 
-pip install fastapi uvicorn python-telegram-bot aiofiles pydantic pydantic-settings
+pip install fastapi uvicorn python-telegram-bot aiofiles pydantic pydantic-settings matplotlib
 ```
 
 # 5. Переменные окружения
